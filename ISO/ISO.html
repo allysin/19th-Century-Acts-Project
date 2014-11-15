@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	
+<title>Isotope Aldridge</title>
+<link rel="stylesheet" href="stylesISO.css">
+<link rel="stylesheet" href="overlay.css">
+
+<script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+<script src="js/jquery.isotope.js" type="text/javascript"></script>
+
+
+
+</head>
+<body>
+ 
+<!-- JS for isotope masonry -->
+<script type="text/javascript">
+ $(window).load(function(){
+    var $container = $('.portfolioContainer');
+    $container.isotope({
+        filter: '*',
+        animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            queue: false
+        }
+    });
+ 
+    $('.portfolioFilter a').click(function(){
+        $('.portfolioFilter .current').removeClass('current');
+        $(this).addClass('current');
+ 
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+         });
+         return false;
+    });
+});
+ 
+</script>
+
+
+<!-- filter for labels -->
+<div class="portfolioFilter">
+ 
+    <a href="#" data-filter="*" class="current">All Categories</a>
+    <a href="#" data-filter=".people">People</a>
+    <a href="#" data-filter=".places">Places</a>
+    <a href="#" data-filter=".artifacts">Artifacts</a>
+    <a href="#" data-filter=".theater">Theaters</a>
+ 
+</div>
+ 
+ <!-- images -->
+<div class="portfolioContainer">
+
+
+
+
+
+<div class="isoframe artifacts">
+	
+    	<a href="images/AldridgeLetter1853a.jpg">
+    	<img class="isoImage" src="images/AldridgeLetter1853a.jpg" alt="image" ></a>
+        <div class="overlay">
+
+    		<div class="iso_title">
+        	<h3>Aldridge Letter</h3>
+    		</div>
+    		<div class="iso_info">
+			Consensus and compromise will not come easy. 
+			When Washington doesn't work, all its promises seem empty.
+			 For we have learned from recent experience that when a financial 
+			 system weakens in one country, prosperity is hurt everywhere.
+    		</div>
+		</div>
+</div>
+ 
+
+
+    
+    <div class="places">
+    <a  href="images/ArundelCastle2007.jpg" title="Arundel Castle 2007">
+        <img class="isoImage" src="images/ArundelCastle2007.jpg" alt="image"></a>
+    </div>
+
+ 
+<div class="isoframe theater artifacts">
+    <a href="images/Birminghamplaybill1848.jpg" title="Birmingham Playbill 1848">
+        <img class="isoImage" src="images/Birminghamplaybill1848.jpg" alt="image">
+     <div class="magnify">
+    		<div class="iso_title">
+    		<img src="magnify.png" style="width:30px">
+        	</div>
+		</div>
+		</a>
+</div> 
+ 
+<div class="isoframe theater places">
+	<a href="images/AdelphiTheatreDublin.jpg" >
+        <img src="images/AdelphiTheatreDublin.jpg" class="isoImage" alt=""/></a>
+        <div class="overlaid">
+
+    		<div class="iso_title">
+        	<h3>Adelphi Theatre Dublin</h3>
+    		</div>
+    		<div class="iso_info">
+			Consensus and compromise will not come easy. 
+			When Washington doesn't work, all its promises seem empty.
+			 For we have learned from recent experience that when a financial 
+			 system weakens in one country, prosperity is hurt everywhere.
+    		</div>
+		</div>
+</div> 
+ 
+    <div class="places theater">
+     <a href="images/Birmingham theatre, 1805.jpg" title="Birmingham Theatre 1895">
+        <img class="isoImage" src="images/Birmingham theatre, 1805.jpg" alt="image"></a>
+    </div>
+ 
+
+    <div class="artifacts">
+     <a class="group3" href="images/AldridgeLetter1853b.jpg" title="Aldridge Letter 1853">
+        <img class="isoImage" src="images/AldridgeLetter1853b.jpg" alt="image"></a>
+    </div>   
+
+
+<div class="isoframe people">
+	<a href="images/AphraBehn.jpg">
+        <img class="isoImage" src="images/AphraBehn.jpg" alt="image"></a>
+	<div class="overlain">
+
+    		<div class="iso_title">
+        	<h3>Aphra Behn</h3>
+    		</div>
+    		<div class="iso_info">
+			Consensus and compromise will not come easy. 
+			When Washington doesn't work, all its promises seem empty.
+			 For we have learned from recent experience that when a financial 
+			 system weakens in one country, prosperity is hurt everywhere.
+    		</div>
+		</div>
+</div>
+
+    <div class="places"> 
+    <a class="group3" href="images/ArundelCastle2011.jpg" title="Arundel Castle">
+        <img class="isoImage" src="images/ArundelCastle2011.jpg" alt="image"></a>
+    </div>   
+    
+<div class="places theater">
+    <a class="group3" href="images/Coburg Theater, 2013a.jpg" title="Coburg Theater 2013">
+        <img class="isoImage" src="images/Coburg Theater, 2013a.jpg" alt="image"></a>
+    </div> 
+    
+      <div class="places theater">
+      <a class="group3" href="images/Coburg Theater, 2013b.jpg" title="Coburg Theater 2013">
+        <img class="isoImage" src="images/Coburg Theater, 2013b.jpg" alt="image"></a>
+    </div> 
+    
+      <div class="places theater">
+        <img class="isoImage" src="images/CoburgTheater1822.jpg" alt="image">
+    </div> 
+    
+    <div class="places theater artifacts">
+        <img class="isoImage" src="images/Covent Garden playbill, 1833.jpg" alt="image">
+    </div> 
+    
+    <div class="places theater artifacts">
+        <img class="isoImage" src="images/Ginger Blue.jpg" alt="image">
+    </div>
+    
+    <div class="people">
+        <img class="isoImage" src="images/Edward Young.jpeg" alt="image">
+    </div>
+    
+     <div class="people theater">
+        <img class="isoImage" src="images/Hamlet.jpg" alt="image">
+    </div>
+    
+    <div class="theater">
+        <img class="isoImage" src="images/Hamlet, 1878.jpg" alt="image">
+    </div>
+</div>
+</body>
+</html>

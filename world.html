@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Mapping Ira Aldridge</title>
+  <meta charset="utf-8" />
+  <meta name="description" content="Visualizing Digital Humanities: Ira Aldridge 19th Century Actor">
+<meta name="keywords" content="19th Century, 19th Century Acts, Theater, Theatre, Aldridge, Acting, Rhetorical Acting, Digital Humanities, Historical Visualizations, Henry Siddons">
+  <script type="text/javascript" src="accordion/modernizr.acc.js"></script>
+  
+
+  
+  
+  <link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.css" />
+  <link rel="stylesheet" type="text/css" media="(min-width:601px)" href="accordion/accordion.css">
+  <link rel="stylesheet" type="text/css"  media="(max-width: 600px)" href="accordion/mobile.css" />
+  <link rel="stylesheet" type="text/css"  media="(max-width: 360px)" href="accordion/mobile360.css" />
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:400italic,400,700italic,700" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="header/favicon.ico" type="image/x-icon">
+
+  <style type="text/css">
+      html, body, #map {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      #slider {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        left:40px;
+      }
+      .goodbye {z-index: 2000000}
+
+      #legend {
+        font-family: serif;
+        font-size: 27px;
+        position: absolute;
+        bottom: 140px;
+        left: 40px;
+      }
+
+      #about {
+        background: #fff;
+        /*border: rgba(242,110,92, .8) solid .5em;*/
+        padding: 10px;
+        overflow-y: auto;
+        font-family: 'Crimson Text', serif;
+        width: 200px;
+        margin-left: 2em;
+        text-align: left;
+        position: absolute;
+        top: 100px;
+
+      }
+    </style>
+    <link rel="stylesheet" href="cartodb.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v2/themes/css/cartodb.ie.css" />
+    <![endif]-->
+  </head>
+  <body>
+    <div id="map"></div>
+    <div class="hello">
+<a href="index.html"><img src="header/19thCActs_logo.jpg" alt="19th Century Acts Logo"></a> 
+<h1>Mapping Ira Aldridge</h1>
+
+<ul class="extra">
+  <a href="map.php"><li>Theaters</li></a>
+    <li></li>
+
+  <a href="world.html"><li> Around the World</li></a>
+  <li></li>
+  <a href="time.html"><li>Roles</li></a>
+</ul>
+</div>
+
+
+<div id="about">
+<h2>Around the World</h2>
+<p>
+This map plots the performances locations of Ira Aldridge. <br><br> Aldridge was born in New York, but his career took off on the London stage. He expanded his range to Ireland in the 1930's and embarked on his first major tour of continental Europe in 1852. 
+</p>
+</div>
+
+
+
+
+    <div id="slider"></div>
+    <div id="legend"></div>
+<div class="goodbye">
+<img src="footer/teal_circle.png" alt="teal circle">
+<table cellspacing=0>
+<tr class="top">
+  <td>Home</td>
+  <td>About</td>
+  <td>Tools</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td class="med"><a href="index.html"> 19th Century Acts!</a></td>
+  <td class="med"><a href="about.html">About 19th Century Acts!</a></td>
+  <td class="med"><a href="map.php">Mapping Ira Aldridge</a></td>
+  <td class="med"><a href="ISO/mediaDB.php">Sights & Sounds</a></td>
+  <td class="med"><a href="resources.html">Resources</a></td>
+
+</tr>
+<tr>
+  <td> &nbsp;</td>
+  <td class="med"><a href="mailto:amanjo@umich.edu">Contact Us</a></td>
+  <td class="med"><a href="gestures.html">Acting Styles</a></td>
+</tr>
+</table>
+</div>
+    
+    <!-- include cartodb.js library -->
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+    <script>
+
+      function changeLegend(start, end) {
+          $('#legend').html(new Date(start).getFullYear() + " - " + new Date(end).getFullYear())
+      }
+      function addTimeSlider(sublayer) {
+         var sql = cartodb.SQL({ user: 'atmackay',api_key: 'f205026cb54ac0d266d570cfc94164da84075bb4' })
+         // fetch time range
+         sql.execute('select max(performancedate), min(performancedate) from performance', function(data) {
+           var range = data.rows[0];
+           var max = new Date(range.max).getTime()
+           var min = new Date(range.min).getTime()
+           // update slider with range
+           $("#slider").slider({
+              range: true,
+              min: min,
+              max: max,
+              values: [ min , (min + max)/2 ],
+              change: function(event, ui) {
+                // give feedback to the user on slide change
+                changeLegend(ui.values[0], ui.values[1]);
+              },
+              stop: function( event, ui ) {
+                // when user selects the dates, update the layer with the range
+                var start = new Date(ui.values[0]).toISOString()
+                var end = new Date(ui.values[1]).toISOString();
+
+                // build sql
+                sublayer.setSQL("select * from performance where performancedate >= '" + start + "' and built <= '" + end + "'");
+              }
+            });
+            changeLegend(min, (min + max)/ 2);
+         });
+      }
+
+      function main() {
+
+        var map = new L.Map('map', {
+          zoomControl: true,
+          center: [50.9410655,1],
+          zoom: 4
+        });
+
+        L.tileLayer('http://api.tiles.mapbox.com/v4/atmackay.k1365b03/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXRtYWNrYXkiLCJhIjoiZlhyeG1xUSJ9.PsIuTUviQ4hOiSqRlfGbgQ', {
+          attribution: 'CartoDB · OSM data'
+        }).addTo(map);
+
+        cartodb.createLayer(map, 'http://atmackay.cartodb.com/api/v2/viz/bdab4988-3ac7-11e4-8238-0e73339ffa50/viz.json', { 
+          legends: true,
+          shareable:true })
+         .addTo(map)
+         .on('done', function(layer) {
+           // add time slider on change
+           addTimeSlider(layer.getSubLayer(0));
+        }).on('error', function() {
+          cartodb.log.log("some error occurred");
+        });
+      }
+
+      // you could use $(window).load(main);
+      window.onload = main;
+    </script>
+  </body>
+</html>

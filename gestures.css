@@ -1,0 +1,163 @@
+
+
+body{
+margin: auto;
+width:100%; 
+ font-family: PT Sans}
+
+#gesturebody{clear:both;padding-left:2em; 
+			padding-right:2em;margin:auto;padding-bottom:6em;width:80%}
+#gesturebody table td {padding-left:1em; padding-right:1em;}
+#gesturebody table {text-align:center; margin:auto;}
+#gesturebody {text-align:center}
+#gesturebody ul {list-style-type:none}
+
+
+#gesturelist a{
+    	margin-right: 1em;
+	padding-left:1em;
+	padding-right:1em;
+	padding-top:6px;
+	padding-bottom:6px;
+    	color:black;
+    	text-decoration:none;	}
+    	
+#gesturelist {clear:both;
+	background-color:rgba(106, 198, 179, .5);
+	font-size:1.375em;
+	border-bottom: #0981C0 solid 5px;
+	margin:auto;
+	text-align:center;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+#gesturelist  a:active {
+	background-color:rgb(106, 198, 179);
+
+}
+
+#try {visibility:none}
+
+#gesturelist a:hover{
+	background-color:rgb(106, 198, 179);}
+
+
+
+#resources{clear:both;margin:auto;padding-bottom:6em;padding-left:2em; padding-right:2em;
+			width:80%;}
+#resources{text-align:center}
+#resources ul {list-style-type:none;}
+#resources ul li ul {width:50%}
+
+#team{
+border: 2px solid;
+    border-radius: 25px;
+    border-color: #6AC6B3;
+    }
+
+.gesture img {width:225px;}
+
+.header {
+  	width:85%;
+	background:#fff;
+	text-align:center;
+	margin:auto; }
+
+.header a{text-decoration:none;}
+
+.header img {height:50px;}
+
+.header ul {margin-right:.25em}
+
+
+.header ul li {display:inline;
+ 	       text-align:center;
+		}
+
+#about {float:right; padding-right: 3%;}
+
+
+h1{
+color:#0981C0;
+font-family: Crimson Text;
+font-weight: bold;
+font-size: 2em;
+}
+
+
+h2{
+color: #EE2430;
+font-family:'Crimson Text';
+font-size:1.375em;  
+}
+
+h3{
+color: #0981C0;
+font-family:'Crimson Text';
+font-size:1.1em;  
+}
+
+h3.about{
+color: #0981C0;
+font-family:'Crimson Text';
+font-size:1.1em;  
+margin-top: 0; 
+padding-top: 0; 
+margin-bottom: 0; 
+padding-bottom: 0; 
+}
+
+p#caption{
+font-family: 'PT Sans';
+font-size:.75em;
+}
+
+p{
+font-family: 'PT Sans';
+font-size:1em;
+}
+
+a{
+color: #F7AAB2;
+}
+
+a:hover{
+color:#EE2430;
+}
+
+.gesture{
+display: inline;
+width:280px;
+
+}
+#ora {margin:auto; width:80%;}
+.siddons {margin:auto; width:80%; padding-bottom:5em;font-family:'PT Sans'; text-align:center;}
+
+
+.hand img {height:60px}
+
+
+
+
+.goodbye
+  	{
+  	z-index:100;
+  	background-color:rgba(225,232,233, .9);
+  	width:100%;
+  	bottom:0;
+  	left:0;
+  	padding-left:.5em;
+	padding-top:1em;
+	text-align:left;
+	height:100px;
+  	}
+	.goodbye img {height:50px;padding-top:5px; float:left;margin-right:4em;}
+	.med a:visited {text-decoration:none; color:#0981c0}
+	.med a:link {text-decoration:none; color:#0981c0}
+	.med a:hover {text-decoration:underline; color:#0981c0}
+	.top a:visited {text-decoration:none; color:#000000;}
+	.top a:link {text-decoration:none; color:#000000;}
+	.top a:hover {text-decoration:underline; color:#000}
+	.med {color:#0981c0; font-size:65%}
+	.top td {padding-right:8em;}

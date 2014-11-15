@@ -1,0 +1,90 @@
+body {
+font-family: 'PT Sans';
+	color:#333;
+}
+a {
+	color:#0981C0;
+}
+/*this is the wrapper for the entire box element*/
+#js-container,
+#js-container-2 {
+	width:80%;
+	margin:30px auto; 
+	position:relative;
+	height:800px;
+	
+}
+.js-image {
+	background:#000;
+	font-size:1em;
+	overflow:hidden;
+	position:absolute;
+	z-index:1;
+	text-align:left;
+}
+.js-image a img,
+a .js-overlay-image {
+	border:none;
+}
+.js-image,
+.js-image img,
+.js-image.size-3,
+.js-image.size-3 img,
+.js-overlay-image {
+	width:222px;
+	height:154px;
+	
+	
+}
+.js-image.size-2,
+.js-image.size-2 img {
+	width:110px;
+	height:110px;
+	font-size:.6em;
+}
+.js-image.size-1,
+.js-image.size-1 img {
+	width:54px;
+	height:37px;
+	font-size:.3em;
+}
+.js-small-caption {
+	position:absolute;
+	bottom:0;
+	left:0;
+	background-color:rgba(225,232,233, .9);
+	width:94%;
+	padding:5%;
+	height:auto;
+}
+.js-small-caption {
+	opacity: 1;
+}
+.js-caption-overlay {
+  	background-color:rgba(225,232,233, 1);
+	z-index:998;
+	padding:18px;
+	position:absolute;
+	overflow:hidden;
+}
+.js-small-caption span {
+	color:#333;
+	font-size:1em;
+
+}
+.js-overlay-image {
+	float:left;
+}
+.js-overlay-html {
+	float:left;
+	padding:0 0 0 15px;
+	width:180px;
+}
+.js-overlay-html h4 {
+	margin:0;
+	padding:0 0 10px 0;
+}
+.js-overlay-html p {
+	font-size:.75em;
+	margin:0;
+}

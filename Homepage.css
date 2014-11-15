@@ -1,0 +1,87 @@
+
+body{
+margin: auto;
+ min-height: 100%; 
+ width:100%; 
+ font-family: PT Sans}
+
+
+.header {
+  	width:85%;
+	background:#fff;
+	text-align:center;
+	margin:auto; }
+
+.header a{text-decoration:none;}
+
+.header img {height:50px;}
+
+.header ul {margin-right:.25em}
+
+
+.header ul li {display:inline;
+ 	       text-align:center;
+		}
+
+#about {float:right}
+
+h1{
+color:#0981C0;
+font-family: 'Crimson Text';
+font-weight: bold;
+font-size: 2.25em;
+
+}
+
+h2{
+color: #EE2430;
+font-family:'Crimson Text Roman';
+font-size:1.375em;  
+}
+
+p{
+font-family: 'PT Sans Regular';
+font-size: 1.125em;
+}
+
+.gesture{
+display: inline;
+width:300px;
+
+}
+
+
+#hand img {height:60px;}
+
+
+.content {clear:both;margin: auto;  padding-top:1.5em;text-align:center;}
+.content ul li {display:inline}
+.content li {list-style-type: none;}
+.content {font-size:1.75em;}
+
+.foursome {margin:auto;text-align:center}
+
+.foursome img {width:35%}
+
+
+.goodbye
+  	{
+  	z-index:100;
+  	background-color:rgba(225,232,233, .9);
+  	width:100%;
+  	bottom:0;
+  	left:0;
+  	padding-left:.5em;
+	padding-top:1em;
+	text-align:left;
+	height:100px;
+  	}
+	.goodbye img {height:50px;padding-top:5px; float:left;margin-right:4em;}
+	.med a:visited {text-decoration:none; color:#0981c0}
+	.med a:link {text-decoration:none; color:#0981c0}
+	.med a:hover {text-decoration:underline; color:#0981c0}
+	.top a:visited {text-decoration:none; color:#000000;}
+	.top a:link {text-decoration:none; color:#000000;}
+	.top a:hover {text-decoration:underline; color:#000}
+	.med {color:#0981c0; font-size:65%}
+	.top td {padding-right:8em;}

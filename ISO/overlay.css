@@ -1,0 +1,71 @@
+.isoFrame:hover .overlay {
+    opacity: 0.75;
+    transition: opacity 0.25s ease 0s;
+    border:2px solid rgba(255,255,255,.5);
+border-radius:4em 2em 8em / 0.5em 3em;
+}
+.overlay {
+    background-color: #000;
+    color: #FFF;
+    opacity: 0;
+    padding: 10px;
+    position: absolute;
+    top: 0px;
+    z-index: 1000;
+    font-family:PT Sans;
+}
+.isoFrame:hover .overlaid {
+    opacity: 0.75;
+    transition: opacity 0.25s ease 0s;
+    border:2px solid rgba(255,255,255,.5);
+border-radius:4em 2em 8em / 0.5em 3em;
+	}
+	
+.overlaid {
+    background-color: #000;
+    color: #FFF;
+    opacity: 0;
+    padding: 10px;
+    position: absolute;
+    bottom: 20%;
+    z-index: 1000;
+}
+
+.isoFrame:hover .overlain {
+    opacity: 0.75;
+    transition: opacity 0.25s ease 0s;
+    border:2px solid rgba(255,255,255,.5);
+border-radius:4em 2em 8em / 0.5em 3em;
+	}
+	
+.overlain {
+    background-color: #000;
+    color: #FFF;
+    opacity: 0;
+    padding: 10px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1000;
+}
+
+
+.isoFrame:hover .magnify {
+    opacity: 0.75;
+    transition: opacity 0.25s ease 0s;
+    border:2px solid rgba(255,255,255,.5);
+	border-radius:50%;
+	width:30px;
+	height:30px;
+	}
+	
+	
+	
+.magnify {
+    background-color: #00CC99;
+    color: #FFF;
+    opacity: 0;
+    padding: 10px;
+    position: absolute;
+    top: 0px;
+    z-index: 1000;
+}
